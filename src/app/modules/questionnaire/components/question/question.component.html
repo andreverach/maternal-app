@@ -1,1 +1,6 @@
-<p>question works!</p>
+<p>{{ question.title }}</p>
+<ul>
+    <li *ngFor="let answer for question.answer">
+        {{answer}}
+    </li>
+</ul>
