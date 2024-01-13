@@ -1,0 +1,5 @@
+<form [formGroup]="form">
+    <input matInput formControlName="name">
+</form>
+<app-language-card [languageOption]="'Español'" (goToTest)="redirectTo($event)"></app-language-card>
+<app-language-card [languageOption]="'Inglés'" (goToTest)="redirectTo($event)"></app-language-card>
