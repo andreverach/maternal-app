@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ResponseService } from 'src/app/core/services/response.service';
+import { languages } from 'src/app/shared/constants/list';
+import { UserDataSelected } from 'src/app/shared/interfaces/user.data';
 
 @Component({
   selector: 'app-user-selection',
@@ -10,9 +13,11 @@ import { Router } from '@angular/router';
 export class UserSelectionComponent implements OnInit {
 
   form!: FormGroup;
+  languageList: string[] = languages;
   constructor(
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private responseService: ResponseService
   ) {
     this.buildForm();
   }
@@ -30,16 +35,20 @@ export class UserSelectionComponent implements OnInit {
   }
 
   redirectTo(language: string) {
-    const data = {
+    const data: UserDataSelected = {
       language,
       name: this.controlNameField?.value
     };
-    console.log(data)
-    if(data.language === 'Español') {
+    if(data.name === "") {
+      return;
+    }
+    this.responseService.setCurrentUserSelection(data);
+    /* console.log(data)
+    if(data.language === languages[0]) {
       console.log('use spanish language');
     } else {
       console.log('use english language');
-    }
+    } */
     this.router.navigateByUrl('/questionnaire');
     //this.router.navigateByUrl('/path-to-next-component');
   }

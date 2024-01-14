@@ -1,1 +1,18 @@
-<p>result works!</p>
+<div class="summary">    
+  <h2>
+    <b>Summary:</b> {{ resultInfo.summary }}
+  </h2>
+  <h3>
+    <b>Depression Description:</b> {{ resultInfo.depressionDescription }}
+  </h3>
+  <div>
+    <p><b>Anxiety Description:</b> {{ resultInfo.anxietyDescription }}</p>
+    <p><b>Description</b>{{ resultInfo.description }}</p>
+    <p><b>tress Description:</b> {{ resultInfo.stressDescription }}</p>
+  </div>
+  <div>
+    <p><b>Anxiety Score:</b> {{ resultInfo.anxietyScore + ' ' + resultInfo.anxietyUnitOfMeasure}}</p>
+    <p><b>Depression Score:</b> {{ resultInfo.depressionScore + ' ' + resultInfo.anxietyUnitOfMeasure}}</p>
+    <p><b>Stress Label:</b> {{ resultInfo.stressLabel }}</p>
+  </div>
+</div>

@@ -1,6 +1,6 @@
-<p>{{ question.title }}</p>
-<ul>
-    <li *ngFor="let answer for question.answer">
-        {{answer}}
-    </li>
-</ul>
+<p class="m-20">{{ _question.title }}</p>
+<div class="m-20">
+    <mat-radio-group aria-label="Select an option" class="answer-container" [(ngModel)]="selectedOption"> 
+        <mat-radio-button *ngFor="let answer of _question.answers; let i = index; trackBy: trackByFn" [value]="answer" (click)="updateAnswer(i)">{{ answer }}</mat-radio-button>
+    </mat-radio-group>
+</div>

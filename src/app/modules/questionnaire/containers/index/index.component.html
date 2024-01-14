@@ -1,2 +1,19 @@
-<app-question [question]="questionListSelected[0]"></app-question>
-<app-question [question]="questionListSelected[1]"></app-question>
+<app-question [setQuestion]="questionListSelected[initialIndex]"></app-question>
+<app-question [setQuestion]="questionListSelected[initialIndex + 1]"></app-question>
+
+<button mat-raised-button (click)="backQuestion()">
+    Back
+</button>
+<button mat-raised-button color="primary" (click)="nextQuestion()">
+    Next
+</button>
+
+<!-- <p>
+    saa
+</p>
+<pre>
+    {{ initialIndex }}
+</pre>
+<pre>
+    {{ dataView$ | async | json }}
+</pre> -->

@@ -6,6 +6,7 @@ import { HomeRoutingModule } from './home-routing.module';
 import { UserSelectionComponent } from './containers/user-selection/user-selection.component';
 import { LanguageCardComponent } from './components/language-card/language-card.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from 'src/app/material/material.module';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MaterialModule
   ],
   exports : [
     

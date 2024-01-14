@@ -4,7 +4,9 @@ import { CommonModule } from '@angular/common';
 import { QuestionnaireRoutingModule } from './questionnaire-routing.module';
 import { IndexComponent } from './containers/index/index.component';
 import { QuestionComponent } from './components/question/question.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from 'src/app/material/material.module';
+
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     QuestionnaireRoutingModule,
-    ReactiveFormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    MaterialModule,
   ],
   exports: [
     

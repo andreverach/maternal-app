@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ResultRoutingModule } from './result-routing.module';
 import { ResultComponent } from './containers/result/result.component';
+import { MaterialModule } from 'src/app/material/material.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { ResultComponent } from './containers/result/result.component';
   ],
   imports: [
     CommonModule,
-    ResultRoutingModule
+    ResultRoutingModule,
+    MaterialModule
   ]
 })
 export class ResultModule { }
